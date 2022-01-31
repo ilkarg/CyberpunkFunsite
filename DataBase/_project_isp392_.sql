@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 31 2022 г., 10:37
+-- Время создания: Янв 31 2022 г., 11:36
 -- Версия сервера: 8.0.24
 -- Версия PHP: 8.0.8
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- База данных: `_project_isp392_`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `id` int NOT NULL,
+  `login` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `login`, `password`) VALUES
+(1, 'mrProger', '12ac55537f6ab5e62a5ba6beb4b1aa58');
 
 -- --------------------------------------------------------
 
@@ -52,6 +71,12 @@ INSERT INTO `comments` (`id`, `page`, `username`, `content`) VALUES
 --
 
 --
+-- Индексы таблицы `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `comments`
 --
 ALTER TABLE `comments`
@@ -60,6 +85,12 @@ ALTER TABLE `comments`
 --
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `comments`
