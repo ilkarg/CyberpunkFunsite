@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 31 2022 г., 11:36
+-- Время создания: Фев 01 2022 г., 21:37
 -- Версия сервера: 8.0.24
 -- Версия PHP: 8.0.8
 
@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `login`, `password`) VALUES
-(1, 'mrProger', '12ac55537f6ab5e62a5ba6beb4b1aa58');
+(1, 'yatov', '12ac55537f6ab5e62a5ba6beb4b1aa58');
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,9 @@ INSERT INTO `comments` (`id`, `page`, `username`, `content`) VALUES
 (4, 'test', 'danila', 'hello'),
 (5, 'test', 'danila', 'bye'),
 (6, 'test_', 'danila', 'helloas'),
-(7, 'test', 'I`am user', '123123');
+(7, 'test', 'I`am user', '123123'),
+(8, 'test', 'yatov', 'hello, world!'),
+(9, 'test', 'yatov', 'bye, world!');
 
 --
 -- Индексы сохранённых таблиц
@@ -96,7 +98,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
