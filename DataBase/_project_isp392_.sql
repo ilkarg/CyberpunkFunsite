@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 01 2022 г., 21:37
+-- Время создания: Фев 02 2022 г., 15:07
 -- Версия сервера: 8.0.24
 -- Версия PHP: 8.0.8
 
@@ -30,15 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `accounts` (
   `id` int NOT NULL,
   `login` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `email` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `login`, `password`) VALUES
-(1, 'yatov', '12ac55537f6ab5e62a5ba6beb4b1aa58');
+INSERT INTO `accounts` (`id`, `login`, `password`, `email`) VALUES
+(1, 'yatov', '4a2711e800189f14f6f2ca52b2672742', 'playchanelkasper@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -64,9 +65,7 @@ INSERT INTO `comments` (`id`, `page`, `username`, `content`) VALUES
 (4, 'test', 'danila', 'hello'),
 (5, 'test', 'danila', 'bye'),
 (6, 'test_', 'danila', 'helloas'),
-(7, 'test', 'I`am user', '123123'),
-(8, 'test', 'yatov', 'hello, world!'),
-(9, 'test', 'yatov', 'bye, world!');
+(7, 'test', 'I`am user', '123123');
 
 --
 -- Индексы сохранённых таблиц
@@ -98,7 +97,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

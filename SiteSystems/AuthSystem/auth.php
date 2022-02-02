@@ -15,12 +15,14 @@
     <div class="container-fluid">
         <div class="row pt-2">
             <div class="col d-flex flex-column">
+                <h2 class="align-self-center">Вход</h2>
                 <div class="align-self-center">
-                    <h2>Вход</h2>
                     <form class="pt-2 d-flex flex-column">
                         <input type="text" id='login-input' class="form-control align-self-center" placeholder="Логин">
                         <br>
                         <input type="password" id='password-input' class="form-control" placeholder="Пароль">
+                        <br>
+                        <span>Забыли пароль? <a href="recovery.php">Восстановить</a></span>
                         <br>
                         <input type="button" class="btn btn-primary align-self-center" value="Войти" onclick="auth()">
                     </form>
