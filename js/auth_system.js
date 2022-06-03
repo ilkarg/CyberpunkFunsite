@@ -1,11 +1,11 @@
-var confirmed = false;
-var confirmationCode = '';
+const confirmed = true;
+const confirmationCode = '';
 
 function auth() {
-    let login = document.getElementById('login-input').value;
-    let password = document.getElementById('password-input').value;
+    let login = document.getElementById('email').value;
+    let password = document.getElementById('pasword').value;
 
-    if ((login !== 'undefined' && login.trim() != '') && (password !== 'undefined' && password.trim() != '')) {
+    if ((login != 'undefined' && login.trim() != '') && (password != 'undefined' && password.trim() != '')) {
         fetch('/backend/AuthController.php/', {
             method: 'POST',
             headers: {
@@ -22,7 +22,7 @@ function auth() {
                     alert('Неверные логин или пароль');
                 else {
                     alert('Вы успешно вошли! Логин - ' + text);
-                    document.location = 'profile.php';
+                    document.location = 'index.html';
                 }
             });
         });
@@ -31,13 +31,12 @@ function auth() {
 }
 
 function registration() {
-    let mail = document.getElementById('mail-input').value;
-    let login = document.getElementById('login-input').value;
-    let password = document.getElementById('password-input').value;
-    let code = document.getElementById('confirmation-code-input').value;
+    let mail = document.getElementById('email').value;
+    let login = document.getElementById('fio').value;
+    let password = document.getElementById('pasword').value;
 
-    if ((login !== 'undefined' && login.trim() != '') && (password !== 'undefined' && password.trim() != '') &&
-        (mail !== 'undefined' && mail.trim() != '') && (code !== 'undefined' && code.trim() != '')) {
+    if ((login != 'undefined' && login.trim() != '') && (password != 'undefined' && password.trim() != '') &&
+        (mail != 'undefined' && mail.trim() != '')) {
         if (confirmed) {
             fetch('/backend/AuthController.php/', {
                 method: 'POST',
@@ -56,7 +55,7 @@ function registration() {
                         alert('Пользователь с данным логином уже зарегистрирован');
                     else {
                         alert('Вы успешно зарегистрировались! Логин - ' + text);
-                        document.location = 'profile.php';
+                        document.location = 'index.html';
                     }
                 });
             });

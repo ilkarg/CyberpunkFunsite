@@ -40,7 +40,7 @@ function Auth($data) {
     try {
         $db = new MyDB();
 
-        $query = "SELECT * FROM accounts WHERE login='$login' AND password='$password'";
+        $query = "SELECT * FROM accounts WHERE email='$login' AND password='$password'";
 
         $result = $db->query($query);
 
@@ -153,13 +153,13 @@ function ConfirmMail($data) {
         $mail->SMTPAuth = true;
     
         $mail->SMTPSecutre = 'tls';
-        $mail->Port = 587;
+        $mail->Port = 465;
     
-        $mail->Host = 'smtp.gmail.com';
-        $mail->Username = 'derghava7@gmail.com';
-        $mail->Password = 'Ilya2012';
+        $mail->Host = 'ssl://smtp.mail.ru';
+        $mail->Username = 'cyberpunk_funsite_bot@mail.ru';
+        $mail->Password = 'es7mWmTFyJPz3YtEx6WL';
     
-        $mail->setFrom('bot@cyberpunk-funsite.ru', 'Cyberpunk-Funsite Bot');
+        $mail->setFrom('cyberpunk_funsite_bot@mail.ru', 'Cyberpunk-Funsite Bot');
         
         if (is_string($address)) {
             $mail->addAddress($address);
@@ -178,7 +178,9 @@ function ConfirmMail($data) {
         $mail->Subject = "Mail confirmation Cyberpunk-Funsite";
         $mail->Body = "<html><h1>$confirmationCode</h1></html>";
     
-        $mail->send();
+        $result = $mail->send();
+
+        echo $result;
     }
     catch (Exception $e) {
         echo "Error: ".$e->getMessage();
